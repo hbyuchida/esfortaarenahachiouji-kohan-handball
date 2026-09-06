@@ -1,0 +1,15 @@
+{
+  "updatedAt": "2026-06-10T21:00:00.000Z",
+  "source": "https://bizmanager.jp/user/event/list_view?is_search=1&office=30&lecture_category=111",
+  "venue": "八王子市総合体育館",
+  "count": 7,
+  "events": [
+    {"id":11455,"title":"【6/14】個人参加ハンドボール","type":"個人参加","date":"2026/6/14","dow":"日曜","time":"19:00～21:00","price":1500,"cap":32,"left":15,"deadline":"2026-06-14","reserveUrl":"https://bizmanager.jp/user/event/11455/reserve?office=30"},
+    {"id":11460,"title":"【6/19】女性のハンドボール教室","type":"女性","date":"2026/6/19","dow":"金曜","time":"20:00～21:30","price":1200,"cap":20,"left":9,"deadline":"2026-06-19","reserveUrl":"https://bizmanager.jp/user/event/11460/reserve?office=30"},
+    {"id":11470,"title":"【6/26】大人のハンドボール教室","type":"大人","date":"2026/6/26","dow":"金曜","time":"20:00～21:30","price":1500,"cap":20,"left":0,"deadline":"2026-06-26","reserveUrl":"https://bizmanager.jp/user/event/11470/reserve?office=30"},
+    {"id":11498,"title":"【6/28】個人参加ハンドボール","type":"個人参加","date":"2026/6/28","dow":"日曜","time":"19:00～21:00","price":1500,"cap":32,"left":29,"deadline":"2026-06-28","reserveUrl":"https://bizmanager.jp/user/event/11498/reserve?office=30"},
+    {"id":12013,"title":"【7/3】女性のハンドボール教室","type":"女性","date":"2026/7/3","dow":"金曜","time":"20:00～21:30","price":1200,"cap":20,"left":19,"deadline":"2026-07-03","reserveUrl":"https://bizmanager.jp/user/event/12013/reserve?office=30"},
+    {"id":12015,"title":"【7/4】大人のハンドボール教室","type":"大人","date":"2026/7/4","dow":"土曜","time":"19:00～21:00","price":1500,"cap":32,"left":20,"deadline":"2026-07-04","reserveUrl":"https://bizmanager.jp/user/event/12015/reserve?office=30"},
+    {"id":12062,"title":"【7/10】大人のハンドボール教室","type":"大人","date":"2026/7/10","dow":"金曜","time":"20:00～21:30","price":1500,"cap":20,"left":9,"deadline":"2026-07-10","reserveUrl":"https://bizmanager.jp/user/event/12062/reserve?office=30"}
+  ]
+}

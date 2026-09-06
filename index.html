@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ハンドボール教室 | 八王子市総合体育館</title>
+<style>
+  :root{
+    --court:#C25A29;
+    --court-deep:#9C3F18;
+    --line:#F2EAD9;
+    --floor:#141210;
+    --floor-2:#211914;
+    --chalk:#FBF7EF;
+    --ash:#A89B89;
+    --sky:#5FB7C9;
+    --ok:#5FA86A;
+    --warn:#D9A441;
+    --full:#8C8273;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif;
+    background:var(--floor);color:var(--chalk);line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+  /* ===== HERO with SVG jump-shot ===== */
+  header.hero{
+    position:relative;overflow:hidden;
+    padding:60px 0 120px;
+    background:
+      radial-gradient(circle at 82% 8%,rgba(95,183,201,.16),transparent 42%),
+      linear-gradient(135deg,var(--court-deep),var(--court) 58%,#D9722F);
+  }
+  .hero-bg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+  .hero .wrap{position:relative;z-index:2}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:.78rem;letter-spacing:.28em;font-weight:700;
+    color:var(--line);margin-bottom:22px;
+  }
+  .eyebrow::before{content:"";width:30px;height:2px;background:var(--line)}
+  .hero h1{
+    font-size:clamp(2.5rem,8vw,4.8rem);font-weight:900;line-height:.98;
+    letter-spacing:-.02em;text-shadow:0 4px 30px rgba(0,0,0,.28);
+  }
+  .hero h1 .small{display:block;font-size:.33em;font-weight:700;letter-spacing:.03em;margin-top:14px;opacity:.94}
+  .venue{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:.95rem;color:rgba(251,247,239,.92);font-weight:600}
+  .venue span{display:inline-flex;align-items:center;gap:8px}
+  .venue .dot{width:7px;height:7px;border-radius:50%;background:var(--sky)}
+
+  .panel{margin-top:-72px;position:relative;z-index:3}
+  .filters{
+    background:var(--floor-2);border:1px solid rgba(251,247,239,.08);
+    border-radius:18px;padding:22px 22px 18px;box-shadow:0 24px 60px rgba(0,0,0,.5);
+  }
+  .filters .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .seg{display:inline-flex;background:rgba(251,247,239,.05);border-radius:11px;padding:4px;gap:2px;flex-wrap:wrap}
+  .seg button{border:0;background:transparent;color:var(--ash);font-family:inherit;font-weight:700;font-size:.88rem;padding:9px 16px;border-radius:8px;cursor:pointer;transition:.18s}
+  .seg button:hover{color:var(--chalk)}
+  .seg button.on{background:var(--court);color:#fff}
+  .search{flex:1;min-width:200px;display:flex;align-items:center;gap:10px;background:rgba(251,247,239,.05);border-radius:11px;padding:0 14px}
+  .search input{flex:1;background:transparent;border:0;outline:0;color:var(--chalk);font-family:inherit;font-size:.95rem;padding:11px 0}
+  .search input::placeholder{color:var(--ash)}
+  .search svg{width:17px;height:17px;stroke:var(--ash);fill:none;stroke-width:2}
+  .meta{margin-top:14px;font-size:.82rem;color:var(--ash);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  .meta b{color:var(--sky)}
+  .updated{font-size:.76rem;color:var(--ash)}
+  .updated .live{display:inline-flex;align-items:center;gap:6px}
+  .updated .live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(95,168,106,.6);animation:pulse 2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(95,168,106,.5)}70%{box-shadow:0 0 0 7px rgba(95,168,106,0)}100%{box-shadow:0 0 0 0 rgba(95,168,106,0)}}
+
+  main{padding:34px 0 80px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+  .card{background:var(--floor-2);border:1px solid rgba(251,247,239,.07);border-radius:16px;padding:20px 20px 18px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden;transition:transform .18s,border-color .18s}
+  .card:hover{transform:translateY(-3px);border-color:rgba(194,90,41,.5)}
+  .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--court)}
+  .card .top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .date-chip{text-align:center;line-height:1;flex-shrink:0}
+  .date-chip .md{font-size:1.55rem;font-weight:900;color:var(--chalk)}
+  .date-chip .yr{font-size:.68rem;color:var(--ash);font-weight:700;letter-spacing:.05em;margin-top:4px}
+  .date-chip .dow{display:inline-block;margin-top:6px;font-size:.7rem;font-weight:800;padding:2px 8px;border-radius:20px;background:rgba(95,183,201,.16);color:var(--sky)}
+  .seats{text-align:right}
+  .seats .label{font-size:.66rem;color:var(--ash);font-weight:700;letter-spacing:.08em}
+  .seats .num{font-size:1.5rem;font-weight:900;line-height:1}
+  .seats .num.ok{color:var(--ok)}.seats .num.warn{color:var(--warn)}.seats .num.full{color:var(--full)}
+  .seats .cap{font-size:.66rem;color:var(--ash);margin-top:2px}
+  .card h3{font-size:1.08rem;font-weight:800;letter-spacing:-.01em;line-height:1.35}
+  .info{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.85rem;color:var(--ash)}
+  .info span{display:inline-flex;align-items:center;gap:6px}
+  .info b{color:var(--chalk);font-weight:700}
+  .bar{height:5px;border-radius:5px;background:rgba(251,247,239,.08);overflow:hidden}
+  .bar i{display:block;height:100%;border-radius:5px}
+  .actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:2px}
+  .price{font-size:1.15rem;font-weight:900}
+  .price small{font-size:.7rem;font-weight:700;color:var(--ash);margin-left:2px}
+  .btn{text-decoration:none;font-weight:800;font-size:.9rem;padding:10px 20px;border-radius:10px;transition:.18s;white-space:nowrap}
+  .btn.apply{background:var(--court);color:#fff}
+  .btn.apply:hover{background:#D9722F}
+  .btn.closed{background:rgba(251,247,239,.06);color:var(--full);pointer-events:none}
+  .empty{text-align:center;padding:70px 20px;color:var(--ash)}
+  .empty .big{font-size:1.2rem;font-weight:800;color:var(--chalk);margin-bottom:8px}
+
+  footer{border-top:1px solid rgba(251,247,239,.08);padding:26px 0 50px;font-size:.78rem;color:var(--ash)}
+  footer a{color:var(--sky);text-decoration:none}
+  footer .links{margin-top:8px;display:flex;flex-wrap:wrap;gap:6px 18px}
+  @media(max-width:520px){.hero{padding:44px 0 100px}.date-chip .md{font-size:1.35rem}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <!-- オリジナルのジャンプシュート風シルエット（特定の人物ではない抽象イラスト） -->
+  <svg class="hero-bg" viewBox="0 0 1040 460" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="pl" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#FBF7EF" stop-opacity=".16"/>
+        <stop offset="1" stop-color="#FBF7EF" stop-opacity=".05"/>
+      </linearGradient>
+    </defs>
+    <!-- コートライン -->
+    <g stroke="#FBF7EF" stroke-opacity=".12" fill="none" stroke-width="2">
+      <path d="M0 400 Q520 340 1040 400"/>
+      <circle cx="860" cy="120" r="150"/>
+      <circle cx="860" cy="120" r="70"/>
+    </g>
+    <!-- 軌道の残像 -->
+    <g fill="none" stroke="#FBF7EF" stroke-linecap="round">
+      <path d="M300 90 Q470 20 640 70" stroke-opacity=".10" stroke-width="14"/>
+      <path d="M320 110 Q480 45 650 92" stroke-opacity=".07" stroke-width="10"/>
+    </g>
+    <!-- ジャンプシュートのシルエット -->
+    <g fill="url(#pl)" stroke="#FBF7EF" stroke-opacity=".22" stroke-width="1.5">
+      <!-- 頭 -->
+      <circle cx="600" cy="150" r="26"/>
+      <!-- 胴体（跳び上がって反った姿勢） -->
+      <path d="M600 176
+               C585 190 578 215 582 245
+               C585 275 600 300 618 316
+               C632 328 648 330 660 322
+               C650 300 645 278 646 258
+               C648 232 640 205 624 188
+               C616 180 608 176 600 176 Z"/>
+      <!-- 振りかぶった右腕＋ボール -->
+      <path d="M612 190 C640 175 672 150 700 120 C712 108 724 110 728 122 C732 134 724 146 712 156 C686 178 656 200 628 210 C618 214 606 208 606 198 C606 194 608 192 612 190 Z"/>
+      <!-- 左腕（バランス） -->
+      <path d="M588 210 C560 220 534 240 516 266 C508 278 514 290 526 290 C536 290 546 282 556 272 C572 256 590 240 602 230 Z"/>
+      <!-- 蹴り上げた脚 -->
+      <path d="M624 300 C650 320 682 336 716 344 C728 347 736 338 732 327 C728 318 716 312 704 308 C680 300 656 288 640 276 Z"/>
+      <!-- 軸脚（下方向） -->
+      <path d="M600 300 C596 330 590 362 578 392 C574 402 582 410 592 406 C600 403 606 394 610 384 C620 356 626 326 626 306 Z"/>
+    </g>
+    <!-- ボール -->
+    <g>
+      <circle cx="726" cy="120" r="20" fill="#D9722F" stroke="#FBF7EF" stroke-opacity=".5" stroke-width="1.5"/>
+      <path d="M712 108 Q726 120 712 132 M740 108 Q726 120 740 132 M708 120 H744" stroke="#FBF7EF" stroke-opacity=".45" fill="none" stroke-width="1.4"/>
+    </g>
+  </svg>
+
+  <div class="wrap">
+    <div class="eyebrow">HANDBALL CLASS · 八王子市総合体育館</div>
+    <h1>ハンドボール教室<span class="small">個人参加・教室・女性クラスをまとめてチェック</span></h1>
+    <div class="venue">
+      <span><i class="dot"></i>八王子市総合体育館</span>
+      <span><i class="dot"></i>運営：ミズノ</span>
+      <span><i class="dot"></i>申込はbizmanager</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap panel">
+  <div class="filters">
+    <div class="row">
+      <div class="seg" id="segType">
+        <button class="on" data-type="all">すべて</button>
+        <button data-type="個人参加">個人参加</button>
+        <button data-type="女性">女性クラス</button>
+        <button data-type="大人">大人の教室</button>
+      </div>
+      <div class="search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+        <input id="q" type="text" placeholder="講座名で検索（例：6/19）">
+      </div>
+    </div>
+    <div class="meta">
+      <span><b id="count">–</b> 件の教室を表示中 <span id="avail"></span></span>
+      <span class="updated" id="updated"></span>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty" style="display:none">
+    <div class="big">該当する教室がありません</div>
+    <div>絞り込み条件を変えてもう一度お試しください。</div>
+  </div>
+</main>
+
+<footer class="wrap">
+  <div>データ出典：bizmanager（八王子市総合体育館 / ミズノ）。残席・受講料は変動します。申込前に公式ページで最新情報をご確認ください。</div>
+  <div class="links">
+    <a href="https://bizmanager.jp/user/event/list_view?is_search=1&office=30&lecture_category=111" target="_blank" rel="noopener">公式の一覧を見る</a>
+    <a href="https://bizmanager.jp/user/member/login?office=30" target="_blank" rel="noopener">ログイン</a>
+  </div>
+</footer>
+
+<script>
+// data.json があればそれを読み、なければ埋め込みデータにフォールバック
+const FALLBACK = {
+  updatedAt:"2026-06-10T21:00:00.000Z",
+  events:[
+    {id:11455,title:"【6/14】個人参加ハンドボール",type:"個人参加",date:"2026/6/14",dow:"日曜",time:"19:00～21:00",price:1500,cap:32,left:15,deadline:"2026-06-14",reserveUrl:"https://bizmanager.jp/user/event/11455/reserve?office=30"},
+    {id:11460,title:"【6/19】女性のハンドボール教室",type:"女性",date:"2026/6/19",dow:"金曜",time:"20:00～21:30",price:1200,cap:20,left:9,deadline:"2026-06-19",reserveUrl:"https://bizmanager.jp/user/event/11460/reserve?office=30"},
+    {id:11470,title:"【6/26】大人のハンドボール教室",type:"大人",date:"2026/6/26",dow:"金曜",time:"20:00～21:30",price:1500,cap:20,left:0,deadline:"2026-06-26",reserveUrl:"https://bizmanager.jp/user/event/11470/reserve?office=30"},
+    {id:11498,title:"【6/28】個人参加ハンドボール",type:"個人参加",date:"2026/6/28",dow:"日曜",time:"19:00～21:00",price:1500,cap:32,left:29,deadline:"2026-06-28",reserveUrl:"https://bizmanager.jp/user/event/11498/reserve?office=30"},
+    {id:12013,title:"【7/3】女性のハンドボール教室",type:"女性",date:"2026/7/3",dow:"金曜",time:"20:00～21:30",price:1200,cap:20,left:19,deadline:"2026-07-03",reserveUrl:"https://bizmanager.jp/user/event/12013/reserve?office=30"},
+    {id:12015,title:"【7/4】大人のハンドボール教室",type:"大人",date:"2026/7/4",dow:"土曜",time:"19:00～21:00",price:1500,cap:32,left:20,deadline:"2026-07-04",reserveUrl:"https://bizmanager.jp/user/event/12015/reserve?office=30"},
+    {id:12062,title:"【7/10】大人のハンドボール教室",type:"大人",date:"2026/7/10",dow:"金曜",time:"20:00～21:30",price:1500,cap:20,left:9,deadline:"2026-07-10",reserveUrl:"https://bizmanager.jp/user/event/12062/reserve?office=30"}
+  ]
+};
+
+let events=[], curType="all", curQ="";
+const grid=document.getElementById('grid');
+const empty=document.getElementById('empty');
+const countEl=document.getElementById('count');
+const availEl=document.getElementById('avail');
+const updatedEl=document.getElementById('updated');
+
+function seatClass(e){if(e.left===0)return"full";if(e.left/e.cap<=0.25)return"warn";return"ok";}
+function mdOf(d){const p=d.split('/');return p[1]+'/'+p[2];}
+function yrOf(d){return d.split('/')[0];}
+function fmtUpdated(iso){
+  try{const d=new Date(iso);return d.toLocaleString('ja-JP',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'});}
+  catch{return"";}
+}
+
+function render(){
+  const list=events.filter(e=>{
+    const okType=curType==="all"||e.type===curType;
+    const okQ=!curQ||e.title.includes(curQ)||e.date.includes(curQ);
+    return okType&&okQ;
+  });
+  grid.innerHTML="";
+  countEl.textContent=list.length;
+  const open=list.filter(e=>e.left>0).length;
+  availEl.innerHTML=list.length?`／ 受付中 <b>${open}</b> 件`:"";
+  empty.style.display=list.length?"none":"block";
+
+  list.forEach(e=>{
+    const sc=seatClass(e);
+    const pct=Math.round((e.cap-e.left)/e.cap*100);
+    const barColor=sc==="full"?"var(--full)":sc==="warn"?"var(--warn)":"var(--ok)";
+    const full=e.left===0;
+    const typeLabel=e.type==="女性"?"女性クラス":e.type==="大人"?"大人の教室":e.type==="個人参加"?"個人参加":e.type;
+    const c=document.createElement('div');c.className="card";
+    c.innerHTML=`
+      <div class="top">
+        <div class="date-chip">
+          <div class="md">${mdOf(e.date)}</div>
+          <div class="yr">${yrOf(e.date)}</div>
+          <div class="dow">${e.dow}</div>
+        </div>
+        <div class="seats">
+          <div class="label">残席</div>
+          <div class="num ${sc}">${full?"満席":e.left}</div>
+          <div class="cap">定員 ${e.cap}名</div>
+        </div>
+      </div>
+      <h3>${e.title}</h3>
+      <div class="info">
+        <span>⏱ <b>${e.time}</b></span>
+        <span>🏷 ${typeLabel}</span>
+        <span>締切 <b>${e.deadline}</b></span>
+      </div>
+      <div class="bar"><i style="width:${pct}%;background:${barColor}"></i></div>
+      <div class="actions">
+        <div class="price">${(e.price||0).toLocaleString()}<small>円</small></div>
+        ${full?`<span class="btn closed">満席</span>`:`<a class="btn apply" href="${e.reserveUrl}" target="_blank" rel="noopener">申込む</a>`}
+      </div>`;
+    grid.appendChild(c);
+  });
+}
+
+async function load(){
+  let data=FALLBACK, live=false;
+  try{
+    const res=await fetch('https://hbyuchida.github.io/esfortaarenahachiouji-kohan-handball/data.json',{cache:'no-store'});
+    if(res.ok){data=await res.json();live=true;}
+  }catch{/* アーティファクト単体表示時は data.json が無いのでフォールバック */}
+  events=(data.events||[]).slice().sort((a,b)=>new Date(a.date)-new Date(b.date));
+  updatedEl.innerHTML=live
+    ? `<span class="live">自動更新 ${fmtUpdated(data.updatedAt)} 時点</span>`
+    : `サンプル表示（配信時は自動更新）`;
+  render();
+}
+
+document.getElementById('segType').addEventListener('click',ev=>{
+  const b=ev.target.closest('button');if(!b)return;
+  document.querySelectorAll('#segType button').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');curType=b.dataset.type;render();
+});
+document.getElementById('q').addEventListener('input',e=>{curQ=e.target.value.trim();render();});
+
+load();
+</script>
+</body>
+</html>
