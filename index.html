@@ -73,6 +73,36 @@
   .updated .live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(95,168,106,.6);animation:pulse 2s infinite}
   @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(95,168,106,.5)}70%{box-shadow:0 0 0 7px rgba(95,168,106,0)}100%{box-shadow:0 0 0 0 rgba(95,168,106,0)}}
 
+  /* ===== 必ずご確認ください（重要なお知らせ） ===== */
+  .notice{
+    margin-top:20px;
+    background:linear-gradient(135deg,rgba(217,164,65,.20),rgba(194,90,41,.16));
+    border:2px solid var(--warn);border-radius:16px;
+    padding:20px 22px;
+    display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;
+    box-shadow:0 14px 40px rgba(0,0,0,.42);
+  }
+  .notice .body{flex:1;min-width:250px}
+  .notice .ttl{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:1.1rem;font-weight:900;letter-spacing:.04em;color:var(--warn);margin-bottom:7px;
+  }
+  .notice .ttl .mark{
+    width:25px;height:25px;border-radius:50%;background:var(--warn);color:#241a08;
+    display:inline-flex;align-items:center;justify-content:center;
+    font-size:.95rem;font-weight:900;flex-shrink:0;
+  }
+  .notice p{font-size:.9rem;color:var(--chalk);opacity:.94}
+  .notice p b{font-weight:900;color:var(--warn);opacity:1}
+  .notice .official{
+    text-decoration:none;white-space:nowrap;flex-shrink:0;
+    background:var(--warn);color:#241a08;font-weight:900;font-size:.95rem;
+    padding:13px 24px;border-radius:11px;transition:.18s;
+    box-shadow:0 6px 20px rgba(217,164,65,.28);
+  }
+  .notice .official:hover{background:#EDBB58;transform:translateY(-2px)}
+  @media(max-width:520px){.notice{padding:18px}.notice .official{width:100%;text-align:center}}
+
   main{padding:34px 0 80px}
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
   .card{background:var(--floor-2);border:1px solid rgba(251,247,239,.07);border-radius:16px;padding:20px 20px 18px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden;transition:transform .18s,border-color .18s}
@@ -191,6 +221,16 @@
   </div>
 </div>
 
+<div class="wrap">
+  <div class="notice">
+    <div class="body">
+      <div class="ttl"><span class="mark">!</span>必ずご確認ください</div>
+      <p>残席・受講料・開催予定は変動します。このページの情報は自動取得のため、実際の内容と異なる場合があります。<b>お申し込みの前に、必ず公式ページで最新情報をご確認ください。</b></p>
+    </div>
+    <a class="official" href="https://bizmanager.jp/user/event/list_view?is_search=1&office=30&lecture_category=111" target="_blank" rel="noopener">公式の一覧を見る →</a>
+  </div>
+</div>
+
 <main class="wrap">
   <div class="grid" id="grid"></div>
   <div class="empty" id="empty" style="display:none">
@@ -202,7 +242,6 @@
 <footer class="wrap">
   <div>データ出典：bizmanager（八王子市総合体育館 / ミズノ）。残席・受講料は変動します。申込前に公式ページで最新情報をご確認ください。</div>
   <div class="links">
-    <a href="https://bizmanager.jp/user/event/list_view?is_search=1&office=30&lecture_category=111" target="_blank" rel="noopener">公式の一覧を見る</a>
     <a href="https://bizmanager.jp/user/member/login?office=30" target="_blank" rel="noopener">ログイン</a>
   </div>
 </footer>
