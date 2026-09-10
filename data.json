@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-10T13:13:13.729Z",
+  "updatedAt": "2026-09-10T22:58:37.775Z",
   "source": "https://bizmanager.jp/user/event/list_view?is_search=1&office=30&lecture_category=111",
   "venue": "八王子市総合体育館",
   "count": 6,
@@ -26,7 +26,7 @@
       "time": "19:00～21:00",
       "price": 1500,
       "cap": 32,
-      "left": 16,
+      "left": 15,
       "deadline": "2026-09-12",
       "reserveUrl": "https://bizmanager.jp/user/event/13424/reserve?office=30"
     },
@@ -52,7 +52,7 @@
       "time": "20:00～21:30",
       "price": 1500,
       "cap": 20,
-      "left": 6,
+      "left": 5,
       "deadline": "2026-09-25",
       "reserveUrl": "https://bizmanager.jp/user/event/13400/reserve?office=30"
     },
