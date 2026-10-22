@@ -18,7 +18,8 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          # Node 20 は 2026-04-30 にサポート終了。24 は 2028-04 まで
+          node-version: '24'
 
       - name: Run scraper
         run: node scrape.js
