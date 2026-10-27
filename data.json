@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-26T15:38:20.342Z",
+  "updatedAt": "2026-10-27T00:15:55.089Z",
   "source": "https://bizmanager.jp/user/event/list_view?is_search=1&office=30&lecture_category=111",
   "venue": "八王子市総合体育館",
-  "count": 7,
+  "count": 8,
   "events": [
     {
       "id": 14196,
@@ -94,6 +94,19 @@
       "left": 29,
       "deadline": "2026-11-22",
       "reserveUrl": "https://bizmanager.jp/user/event/14891/reserve?office=30"
+    },
+    {
+      "id": 14889,
+      "title": "【11/27】大人のハンドボール教室",
+      "type": "大人",
+      "date": "2026/11/27",
+      "dow": "金曜",
+      "time": "20:00～21:30",
+      "price": 1500,
+      "cap": 20,
+      "left": 19,
+      "deadline": "2026-11-27",
+      "reserveUrl": "https://bizmanager.jp/user/event/14889/reserve?office=30"
     }
   ]
 }
