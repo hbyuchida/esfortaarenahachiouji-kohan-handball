@@ -1,22 +1,9 @@
 {
-  "updatedAt": "2026-10-30T00:39:58.974Z",
+  "updatedAt": "2026-10-30T15:26:12.000Z",
   "source": "https://bizmanager.jp/user/event/list_view?is_search=1&office=30&lecture_category=111",
   "venue": "八王子市総合体育館",
-  "count": 8,
+  "count": 7,
   "events": [
-    {
-      "id": 14196,
-      "title": "【10/30】女性のハンドボール教室",
-      "type": "女性",
-      "date": "2026/10/30",
-      "dow": "金曜",
-      "time": "20:00～21:30",
-      "price": 1200,
-      "cap": 20,
-      "left": 15,
-      "deadline": "2026-10-30",
-      "reserveUrl": "https://bizmanager.jp/user/event/14196/reserve?office=30"
-    },
     {
       "id": 14869,
       "title": "【11/1】個人参加ハンドボール",
@@ -26,7 +13,7 @@
       "time": "19:00～21:00",
       "price": 1500,
       "cap": 32,
-      "left": 28,
+      "left": 26,
       "deadline": "2026-11-01",
       "reserveUrl": "https://bizmanager.jp/user/event/14869/reserve?office=30"
     },
@@ -65,7 +52,7 @@
       "time": "19:30～21:30",
       "price": 1500,
       "cap": 20,
-      "left": 13,
+      "left": 12,
       "deadline": "2026-11-16",
       "reserveUrl": "https://bizmanager.jp/user/event/14892/reserve?office=30"
     },
@@ -91,7 +78,7 @@
       "time": "19:00～21:00",
       "price": 1500,
       "cap": 32,
-      "left": 29,
+      "left": 27,
       "deadline": "2026-11-22",
       "reserveUrl": "https://bizmanager.jp/user/event/14891/reserve?office=30"
     },
@@ -104,7 +91,7 @@
       "time": "20:00～21:30",
       "price": 1500,
       "cap": 20,
-      "left": 9,
+      "left": 7,
       "deadline": "2026-11-27",
       "reserveUrl": "https://bizmanager.jp/user/event/14889/reserve?office=30"
     }
